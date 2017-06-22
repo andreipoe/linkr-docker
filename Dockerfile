@@ -68,5 +68,6 @@ RUN set -x && \
 VOLUME ["/data"]
 EXPOSE 80
 
-CMD service redis-server start && /bin/bash /linkr/check_db.sh && /usr/sbin/apache2ctl -D FOREGROUND
+COPY startup.sh /startup.sh
+CMD ["/startup.sh"]
 
