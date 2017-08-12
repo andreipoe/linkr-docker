@@ -58,9 +58,9 @@ RUN cd /linkr/ && \
 	chown www-data:www-data /data/linkr.db && \
 	cp /data/linkr.db /linkr/linkr_new.db
 
-# Remove unneeded filed
+# Remove unneeded packages
 RUN set -x && \
-	apt-get remove -y git curl && \
+    apt-get remove -y curl && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
     set +x
